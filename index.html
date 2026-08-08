@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Kalyani - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #e8e8e8;
+            --card-bg: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --accent-blue: #4a90d9;
+            --accent-green: #5a9;
+            --accent-red: #c45;
+            --accent-purple: #7a5;
+            --border-radius: 12px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-hover: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 12px 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-tab {
+            background: #e3e3e3;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-tab:hover {
+            background: #d0d0d0;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icons a {
+            color: var(--text-secondary);
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Grid Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-blue { background: #e8f0fe; color: #1a73e8; }
+        .header-green { background: #e6f4ea; color: #1e8e3e; }
+        .header-red { background: #fce8e6; color: #d93025; }
+        .header-purple { background: #f3e8fd; color: #9334e6; }
+        .header-orange { background: #fef3e8; color: #e37400; }
+        .header-teal { background: #e8f6f8; color: #00796b; }
+
+        /* Profile Card */
+        .profile-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e0e0;
+            flex-shrink: 0;
+        }
+
+        .profile-info h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .profile-info .title {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .profile-info .bio {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Location Card */
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .location-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .location-item i {
+            color: var(--text-secondary);
+            margin-top: 3px;
+            width: 16px;
+        }
+
+        .location-item .label {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .location-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .location-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Publication Card */
+        .pub-content {
+            display: flex;
+            gap: 16px;
+        }
+
+        .pub-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .pub-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .pub-info h3 a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .pub-info h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .pub-info .venue {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* News Card */
+        .news-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .news-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .news-date {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            min-width: 70px;
+            flex-shrink: 0;
+        }
+
+        .news-text {
+            font-size: 14px;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .news-text a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .news-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bio Card */
+        .bio-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .bio-text a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .bio-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Expandable Sections */
+        .expandable {
+            margin-bottom: 12px;
+        }
+
+        .expandable-header {
+            width: 100%;
+            background: #f5f5f5;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .expandable-header:hover {
+            background: #ebebeb;
+        }
+
+        .expandable-content {
+            display: none;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .expandable-content.active {
+            display: block;
+        }
+
+        .expandable-content ul {
+            list-style: none;
+        }
+
+        .expandable-content li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .expandable-content li:last-child {
+            margin-bottom: 0;
+        }
+
+        .expandable-content a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .expandable-content a:hover {
+            text-decoration: underline;
+        }
+
+        .chevron {
+            transition: transform 0.2s;
+        }
+
+        .chevron.rotated {
+            transform: rotate(180deg);
+        }
+
+        /* Skills */
+        .skill-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        /* Repositories */
+        .repo-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .repo-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* Filmstrip */
+        .filmstrip {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .filmstrip-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: #fff3e0;
+            color: #e65100;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filmstrip-frame {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 12px 8px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .filmstrip-frame::before,
+        .filmstrip-frame::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                #1a1a1a 0px,
+                #1a1a1a 6px,
+                #333 6px,
+                #333 10px
+            );
+        }
+
+        .filmstrip-frame::before {
+            top: 0;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .filmstrip-frame::after {
+            bottom: 0;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .filmstrip-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .nav-bar {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .social-icons {
+                gap: 12px;
+            }
+        }
+
+        /* Scrollbar styling for news */
+        .news-scroll {
+            max-height: 280px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .news-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .news-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .news-scroll::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <button class="nav-tab">About</button>
+            <div class="social-icons">
+                <a href="mailto:249000043@ibab.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/sachin-k9" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://scholar.google.com/citations?user=CZLQG3EAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://orcid.org/0009-0008-9605-1190" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                <a href="https://linkedin.com/in/sachin-kalyani" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </nav>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <div class="left-column">
+                <!-- Profile Card -->
+                <div class="card">
+                    <div class="profile-content">
+                        <img src="profile.jpg" alt="Sachin Kalyani" class="profile-photo" id="profilePhoto">
+                        <div class="profile-info">
+                            <h1>Sachin Kalyani</h1>
+                            <p class="title">PhD Research Scholar</p>
+                            <p class="bio">
+                                PhD student in Computational Biology with a background in biochemistry and molecular biology. I specialize in
+                                applying deep learning and statistical methods to genomic and behavioral data, with a focus on neurodevelopmental
+                                disorders. Currently working on AI models for early diagnosis and therapeutic understanding.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Publication Card -->
+                <div class="card">
+                    <div class="card-header header-red">
+                        <i class="fas fa-file-alt"></i> Latest Publication
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-info">
+                            <h3><a href="https://academic.oup.com/ib/article-abstract/doi/10.1093/intbio/zyag005/8501291" target="_blank">Delineating the interactions among mutual miRNAs and target genes associated with Parkinson’s disease, endoplasmic reticulum stress and autophagy pathways: a computational analysis</a></h3>
+                            <p class="journal">Integrative Biology 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Card -->
+                <div class="card">
+                    <div class="card-header header-blue">
+                        <i class="fas fa-newspaper"></i> News
+                    </div>
+                    <div class="news-scroll">
+                        <div class="news-item">
+                            <span class="news-date">Feb 2024</span>
+                            <p class="news-text">
+                                Started PhD at Institute of Bioinformatics and Applied Biotechnology (IBAB), Bengaluru, India.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio Card -->
+                <div class="card">
+                    <div class="card-header header-green">
+                        <i class="fas fa-user"></i> Bio
+                    </div>
+                    <p class="bio-text">
+                        I am a PhD research scholar supervised by <a href="https://www.ibab.ac.in/people/faculty-members/shyam-rajagopalan/">Prof. Shyam Sundar Rajagopalan</a> at Institute of Bioinformatics and Applied Biotechnology.
+                        My research interests lie at the intersection of Computational Biology and Neuroscience. 
+                        I am specifically interested in theoretically understanding and developing effective representations of biological data.<br><br>
+                        Feel free to reach out if you are interested in collaborating, discussing research, or even just chatting!
+                    </p>
+
+                    <!-- Education -->
+                    <div class="expandable">
+                        <button class="expandable-header" onclick="toggleSection(this)">
+                            <span><i class="fas fa-graduation-cap"></i> Education</span>
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="expandable-content">
+                            <ul>
+                                <li>
+                                    <strong>PhD in Computational Biology</strong>, <a href="https://www.ibab.ac.in/?ref=brand">Institute of Bioinformatics and Applied Biotechnology</a>, 2024–present
+                                </li>
+                                <li>
+                                    <strong>M.Sc. in Biochemistry and Molecular Biology</strong>, <a href="https://www.pondiuni.edu.in/">Pondicherry University</a>, 2020–2022
+                                </li>
+                                <li>
+                                    <strong>B.Sc. Biochemistry, Microbiology, and Chemistry</strong>, <a href="https://www.adc.edu.in/">Aurora's Degree and PG College</a>, 2017–2020
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="expandable">
+                        <button class="expandable-header" onclick="toggleSection(this)">
+                            <span><i class="fas fa-briefcase"></i> Experience</span>
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="expandable-content">
+                            <ul>
+                                <li>
+                                    <strong>PhD Research Scholar</strong> @ <a href="https://www.ibab.ac.in/?ref=brand">Institute of Bioinformatics and Applied Biotechnology</a>, 2024–Present
+                                </li>
+                                <li>
+                                    <strong>Junior Research Fellow</strong> @ <a href="https://www.ibab.ac.in/?ref=brand">Institute of Bioinformatics and Applied Biotechnology</a>, 2024
+                                </li>
+                                <li>
+                                    <strong>M.Sc. Dissertation Student</strong> @ <a href="https://www.pondiuni.edu.in/">Pondicherry University</a>, 2022-2024
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Teaching -->
+                    <div class="expandable">
+                        <button class="expandable-header" onclick="toggleSection(this)">
+                            <span><i class="fas fa-chalkboard-teacher"></i> Teaching</span>
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="expandable-content">
+                            <ul>
+                                <li>
+                                    Teaching Assistant for Machine Learning at Syngene IBAB Certificate Program in Artificial Intelligence in Life Sciences (SAILS), Semester April 2026 – July 2026.
+                                </li>
+                                <li>
+                                    Teaching Assistant for Machine Learning at Institute of Bioinformatics and Applied Biotechnology, Semester Jan 2026 – May 2026.
+                                </li>
+                                <li>
+                                    Teaching Assistant for Deep Learning at Institute of Bioinformatics and Applied Biotechnology, Semester July 2025 - November 2025.
+                                </li>
+                                <li>
+                                    Teaching Assistant for Machine Learning at Institute of Bioinformatics and Applied Biotechnology, Semester Jan 2025 - May 2025.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="expandable">
+                        <button class="expandable-header" onclick="toggleSection(this)">
+                            <span><i class="fas fa-code"></i> Skills</span>
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="expandable-content">
+                            <p style="margin-bottom: 8px;"><strong>Programming:</strong></p>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">Shell</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">LaTeX</span>
+                            <br><br>
+                            <p style="margin-bottom: 8px;"><strong>Machine Learning/Deep Learning:</strong></p>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">sci-kit learn</span>
+                            <span class="skill-tag">SHAP</span>
+                            <span class="skill-tag">Git</span>
+                            <br><br>
+                            <p style="margin-bottom: 8px;"><strong>Data Science Tools:</strong></p>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                        </div>
+                    </div>
+
+                    <!-- Repositories -->
+                    <div class="expandable">
+                        <button class="expandable-header" onclick="toggleSection(this)">
+                            <span><i class="fab fa-github"></i> Repositories</span>
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="expandable-content">
+                            <div class="repo-item">
+                                <i class="fas fa-star" style="color: #ffd700; font-size: 12px;"></i>
+                                <a href="https://github.com/sachin-k9/Omics_ML" target="_blank">sachin-k9/Omics_ML</a>
+                            </div>
+                            <div class="repo-item">
+                                <i class="fas fa-star" style="color: #ffd700; font-size: 12px;"></i>
+                                <a href="https://github.com/sachin-k9/high_performance_computing" target="_blank">sachin-k9/high_performance_computing</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Awards -->
+                    <div class="expandable">
+                        <button class="expandable-header" onclick="toggleSection(this)">
+                            <span><i class="fas fa-award"></i> Awards</span>
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="expandable-content">
+                            <ul>
+                                <li>
+                                    <strong>Best Poster Award</strong>, ICEBG, 2023
+                                </li>
+                                <li>
+                                    <strong>First Prize in Scientific Writing, Carl Neuberg celebrations</strong>, Aurora’s Degree and PG College, 2019
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Oral and Poster presentations-->
+                    <div class="expandable"> 
+                        <button class="expandable-header" onclick="toggleSection(this)">
+                            <span><i class="fas fa-microphone"></i> Oral and Poster presentations</span>
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </button>
+                        <div class="expandable-content">
+                            <ul>
+                                <li>
+                                    <strong>Investigating HyenaDNA for Out-Of-Distribution Prediction of Social Communication Outcomes in Autism Spectrum Disorder</strong>, Poster Presentation, International Society of Developmental Neuroscience, 2027 (scheduled)
+                                </li>
+                                <li>
+                                    <strong>Predictive Utility of Vineland-3 Adaptive Behavior Scales for Cognitive Function, Social Communication and Motor Skills Deficit</strong>, Poster Presentation, Big Data Biology Symposium, 2025
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Location Card -->
+                <div class="card" style="margin-bottom: 20px;">
+                    <div class="card-header header-purple">
+                        <i class="fas fa-map-marker-alt"></i> Location
+                    </div>
+                    <div class="location-item">
+                        <i class="fas fa-home"></i>
+                        <div>
+                            <span class="label">Hometown</span>
+                            <a href="https://maps.google.com/?q=Hyderabad" target="_blank">Hyderabad, India</a>
+                        </div>
+                    </div>
+                    <div class="location-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <span class="label">Current location</span>
+                            <a href="https://maps.google.com/?q=Bengaluru" target="_blank">Bengaluru, India</a>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                Copyright &copy; 2026 Sachin Kalyani. Powered by GitHub Pages. 
+                <a href="https://github.com/sachin-k9/sachinkalyani.github.io" target="_blank">View source</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('.chevron');
+            
+            content.classList.toggle('active');
+            chevron.classList.toggle('rotated');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
