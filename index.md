@@ -250,7 +250,7 @@ permalink: /
             <li>
               <i class="fas fa-calendar-check"></i>
               <div>
-                <strong>Accelerating Biology</strong>
+                <strong>Accelerating Biology: Reimagining Biology in AI Era Symposium</strong>
                 <span>Sept 2026 (scheduled)</span>
               </div>
             </li>
