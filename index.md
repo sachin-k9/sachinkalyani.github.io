@@ -221,13 +221,6 @@ permalink: /
               </div>
             </li>
             <li>
-              <span class="pres-type poster">Poster</span>
-              <div>
-                <strong>Investigating HyenaDNA for Out-Of-Distribution Prediction of Social Communication Outcomes in Autism Spectrum Disorder</strong>
-                <span>Accelerating Biology, 2026 (scheduled)</span>
-              </div>
-            </li>
-            <li>
               <span class="pres-type oral">Oral</span>
               <div>
                 <strong>ACII 2025 — Doctoral Consortium</strong>
