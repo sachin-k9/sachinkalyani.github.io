@@ -251,7 +251,7 @@ permalink: /
               <i class="fas fa-calendar-check"></i>
               <div>
                 <strong>Accelerating Biology</strong>
-                <span>Sept 2026</span>
+                <span>Sept 2026 (scheduled)</span>
               </div>
             </li>
             <li>
