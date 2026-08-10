@@ -1,0 +1,26 @@
+title: Sachin Kalyani
+description: PhD Research Scholar in Computational Biology
+url: https://sachin-k9.github.io
+baseurl: ''
+author:
+  name: Sachin Kalyani
+  email: 249000043@ibab.ac.in
+github_username: sachin-k9
+linkedin_username: sachin-kalyani
+google_scholar: CZLQG3EAAAAJ
+orcid: 0009-0008-9605-1190
+timezone: Asia/Kolkata
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+permalink: /blog/:year/:month/:day/:title/
+defaults:
+  - scope:
+      path: ''
+      type: 'posts'
+    values:
+      layout: 'post'
+      author: 'Sachin Kalyani'

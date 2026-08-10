@@ -1,0 +1,22 @@
+<nav class="nav-bar">
+    <div class="nav-brand">
+        <a href="{{ '/' | relative_url }}" class="nav-link-brand">
+            <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Sachin Kalyani" class="nav-avatar" onerror="this.style.display='none'">
+            <span class="nav-name">Sachin Kalyani</span>
+        </a>
+    </div>
+    <div class="nav-links">
+        <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">About</a>
+        <a href="{{ '/publications' | relative_url }}" class="nav-link {% if page.url contains 'publications' %}active{% endif %}">Publications</a>
+        <a href="{{ '/teaching' | relative_url }}" class="nav-link {% if page.url contains 'teaching' %}active{% endif %}">Teaching</a>
+        <a href="{{ '/cv' | relative_url }}" class="nav-link {% if page.url contains 'cv' %}active{% endif %}">CV</a>
+        <a href="{{ '/blog' | relative_url }}" class="nav-link {% if page.url contains 'blog' %}active{% endif %}">Blog</a>
+    </div>
+    <div class="social-icons">
+        <a href="mailto:{{ site.author.email }}" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.com/citations?user={{ site.google_scholar }}&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://orcid.org/{{ site.orcid }}" target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fab fa-orcid"></i></a>
+        <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+</nav>
