@@ -315,7 +315,7 @@ permalink: /
           <i class="fas fa-building"></i>
           <div>
             <span class="label">Current Location</span>
-            <a href="https://maps.google.com/?q=Bengaluru" target="_blank" rel="noopener noreferrer">Bengaluru, India</a>
+            <a href="https://www.google.com/maps/place/IBAB/@12.8449188,77.6561612,1220m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae6c8368d47aa3:0x8b7ab32388f6f0ad!8m2!3d12.8449136!4d77.6587361!16s%2Fm%2F02z5pfx?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Bengaluru, India</a>
           </div>
         </div>
       </div>
