@@ -294,7 +294,7 @@ permalink: /
             </div>
           </a>
         </div> -->
-      </div> -->
+      </div>
     </div>
 
     <!-- Right Column -->
