@@ -188,6 +188,15 @@ body {
     gap: 24px;
 }
 
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    gap: 24px;
+    position: sticky;
+    top: 80px;
+}
+
 /* ===== CARDS ===== */
 .card {
     background: var(--bg-card);
@@ -344,8 +353,7 @@ body {
 
 /* ===== LOCATION ===== */
 .location-card {
-    position: sticky;
-    top: 80px;
+    width: 100%;
 }
 
 .location-item {
@@ -1306,6 +1314,10 @@ body {
 @media (max-width: 768px) {
     .main-grid {
         grid-template-columns: 1fr;
+    }
+
+    .right-column {
+        position: static;
     }
     
     .nav-bar {

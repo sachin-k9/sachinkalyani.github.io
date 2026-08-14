@@ -47,21 +47,6 @@ permalink: /
         </div>
       </div>
 
-      <!-- News Card -->
-      <div class="card">
-        <div class="card-header header-cyan">
-          <i class="fas fa-newspaper"></i> News
-        </div>
-        <div class="news-scroll">
-          <div class="news-item">
-            <span class="news-date">Feb 2024</span>
-            <p class="news-text">
-              Started PhD at <a href="https://www.ibab.ac.in" target="_blank" rel="noopener noreferrer">Institute of Bioinformatics and Applied Biotechnology (IBAB)</a>, Bengaluru, India.
-            </p>
-          </div>
-        </div>
-      </div>
-
       <!-- Bio Card -->
       <div class="card">
         <div class="card-header header-teal">
@@ -267,7 +252,7 @@ permalink: /
 
       <!-- Repositories Card -->
       <!-- <div class="card">
-        <!-- <div class="card-header header-amber">
+        <div class="card-header header-amber">
           <i class="fab fa-github"></i> Repositories
         </div>
         <div class="repos-grid">
@@ -293,8 +278,8 @@ permalink: /
               <span><i class="fas fa-code-branch"></i> 0</span>
             </div>
           </a>
-        </div> -->
-      </div>
+        </div>
+      </div> -->
     </div>
 
     <!-- Right Column -->
@@ -316,6 +301,21 @@ permalink: /
           <div>
             <span class="label">Current Location</span>
             <a href="https://www.google.com/maps/place/IBAB/@12.8449188,77.6561612,1220m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae6c8368d47aa3:0x8b7ab32388f6f0ad!8m2!3d12.8449136!4d77.6587361!16s%2Fm%2F02z5pfx?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Bengaluru, India</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- News Card -->
+      <div class="card news-card">
+        <div class="card-header header-cyan">
+          <i class="fas fa-newspaper"></i> News
+        </div>
+        <div class="news-scroll">
+          <div class="news-item">
+            <span class="news-date">Feb 2024</span>
+            <p class="news-text">
+              Started PhD at <a href="https://www.ibab.ac.in" target="_blank" rel="noopener noreferrer">Institute of Bioinformatics and Applied Biotechnology (IBAB)</a>, Bengaluru, India.
+            </p>
           </div>
         </div>
       </div>
