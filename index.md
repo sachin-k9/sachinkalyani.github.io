@@ -312,6 +312,12 @@ permalink: /
         </div>
         <div class="news-scroll">
           <div class="news-item">
+            <span class="news-date">Feb 2026</span>
+            <p class="news-text">
+              Masters Thesis work <a href="https://academic.oup.com/ib/article-abstract/doi/10.1093/intbio/zyag005/8501291" target="_blank" rel="noopener noreferrer">Delineating the interactions among mutual miRNAs and target genes associated with Parkinson’s disease, endoplasmic reticulum stress and autophagy pathways: a computational analysis</a>got published in Integrative Biology Journal.
+            </p>
+          </div>
+          <div class="news-item">
             <span class="news-date">Feb 2024</span>
             <p class="news-text">
               Started PhD at <a href="https://www.ibab.ac.in" target="_blank" rel="noopener noreferrer">Institute of Bioinformatics and Applied Biotechnology (IBAB)</a>, Bengaluru, India.
