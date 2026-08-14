@@ -266,8 +266,8 @@ permalink: /
       </div>
 
       <!-- Repositories Card -->
-      <div class="card">
-        <div class="card-header header-amber">
+      <!-- <div class="card">
+        <!-- <div class="card-header header-amber">
           <i class="fab fa-github"></i> Repositories
         </div>
         <div class="repos-grid">
@@ -293,8 +293,8 @@ permalink: /
               <span><i class="fas fa-code-branch"></i> 0</span>
             </div>
           </a>
-        </div>
-      </div>
+        </div> -->
+      </div> -->
     </div>
 
     <!-- Right Column -->
