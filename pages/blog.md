@@ -1,4 +1,4 @@
-<!-- ---
+---
 layout: default
 title: Blog
 permalink: /blog/
@@ -15,4 +15,4 @@ permalink: /blog/
       <a href="{{ post.url | relative_url }}">Read more...</a>
     </div>
   {% endfor %}
-</div> -->
+</div>
